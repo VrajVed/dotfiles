@@ -10,6 +10,7 @@
     "mpris",
     "cpu",
     "temperature"
+    // "custom/cava",      // commented out
     // "custom/uptime"      // commented out
   ],
   "modules-center": [
@@ -56,6 +57,12 @@
     "format": " {temperatureC}°C",
     "tooltip": true
   },
+  /* ---------------- CAVA (visualizer) ---------------- */
+  // "custom/cava": {
+  //   "format": "󰝚 {output}",
+  //   "exec": "bash -lc 'tail -f /tmp/cava-waybar.fifo'",
+  //   "tooltip": false
+  // },
   /* ---------------- MPRIS (MUSIC) ---------------- */
   "mpris": {
     "format": "{player_icon}  {status_icon}   {title}",
