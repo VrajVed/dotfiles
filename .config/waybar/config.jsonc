@@ -4,19 +4,17 @@
   "height": 58,
   "spacing": 5,
   "margin-bottom": -10,
-
   "modules-left": [
     "hyprland/workspaces",
     // "custom/music",      // commented out
+    "mpris",
     "cpu",
     "temperature"
     // "custom/uptime"      // commented out
   ],
-
   "modules-center": [
     "clock"
   ],
-
   "modules-right": [
     "tray",
     "bluetooth",
@@ -29,16 +27,14 @@
     // "custom/power",
     // "custom/lock"
   ],
-
   /* ---------------- WORKSPACES ---------------- */
   "hyprland/workspaces": {
     "format": "{icon}",
     "format-icons": {
-      "active": "",
-      "default": ""
+      "active": "",
+      "default": ""
     }
   },
-
   /* ---------------- CLOCK ---------------- */
   "clock": {
     "timezone": "Asia/Kolkata",
@@ -46,14 +42,13 @@
     "format": "{:%H:%M:%S  -  %A, %d}",
     "interval": 1
   },
-
   /* ---------------- CPU ---------------- */
   "cpu": {
     "interval": 1,
     "format": " {usage}%",
-    "tooltip": true
+    "tooltip": true,
+    "on-click": "kitty -e htop"
   },
-
   /* ---------------- CPU TEMP ---------------- */
   "temperature": {
     "critical-threshold": 85,
@@ -61,7 +56,22 @@
     "format": " {temperatureC}°C",
     "tooltip": true
   },
-
+  /* ---------------- MPRIS (MUSIC) ---------------- */
+  "mpris": {
+    "format": "{player_icon}  {status_icon}   {title}",
+    "status-icons": {
+      "playing": "",
+      "paused": ""
+    },
+    "max-length": 25,
+    "on-click": "playerctl play-pause",
+    "on-scroll-down": "playerctl next",
+    "on-scroll-up": "playerctl previous",
+    "player-icons": {
+      "firefox": "",
+      "spotify": ""
+    }
+  },
   /* ---------------- NETWORK (ESSID) ---------------- */
   "network": {
     "format-wifi": "󰤢 {essid}",
@@ -70,7 +80,6 @@
     "tooltip-format": "{ifname} • {ipaddr}",
     "interval": 5
   },
-
   /* ---------------- BLUETOOTH ---------------- */
   "bluetooth": {
     "format": "󰂲",
@@ -79,24 +88,27 @@
     "tooltip-format-connected": "{device_enumerate}",
     "on-click": "blueman-manager"
   },
-
   /* ---------------- AUDIO OUTPUT ---------------- */
   "pulseaudio": {
     "format": "{icon} {volume}%",
     "format-muted": " muted",
     "format-icons": {
-      "default": ["", "", ""]
+      "default": [
+        "",
+        "",
+        ""
+      ]
     },
-    "tooltip": true
+    "tooltip": true,
+    "on-click": "pavucontrol"
   },
-
   /* ---------------- MIC / INPUT ---------------- */
   "pulseaudio#input": {
     "format": " {volume}%",
-    "format-muted": " muted",
-    "tooltip": true
+    "format-muted": "  muted",
+    "tooltip": true,
+    "on-click": "pavucontrol -t 3"
   },
-
   /* ---------------- BATTERY ---------------- */
   "battery": {
     "interval": 2,
@@ -107,13 +119,17 @@
     "format": "{icon} {capacity}%",
     "format-charging": " {capacity}%",
     "format-plugged": " {capacity}%",
-    "format-icons": ["", "", "", "", ""]
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
   },
-
   /* ---------------- TRAY ---------------- */
   "tray": {
     "spacing": 10
   }
-
   // vim: ft=jsonc
 }

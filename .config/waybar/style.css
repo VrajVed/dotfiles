@@ -65,11 +65,11 @@ window#waybar {
 
 #workspaces button.active {
   color: @mauve;
-  background-color: rgba(203,166,247,0.12);
+  background-color: rgba(203, 166, 247, 0.12);
 }
 
 #workspaces button:hover {
-  background-color: rgba(137,180,250,0.12);
+  background-color: rgba(137, 180, 250, 0.12);
   color: @text;
 }
 
@@ -82,10 +82,27 @@ window#waybar {
   color: @peach;
 }
 
+/* -------- MPRIS / Music -------- */
+#mpris {
+  background-color: @crust;
+  padding: 6px 10px;
+  margin: 6px 4px;
+  border-radius: 8px;
+  color: @mauve;
+}
+
+#mpris.playing {
+  color: @green;
+}
+
+#mpris.paused {
+  color: @surface2;
+}
+
 /* -------- Clock -------- */
 #clock {
   font-weight: bold;
-  border: 2px solid rgba(116,199,236,0.15);
+  border: 2px solid rgba(116, 199, 236, 0.15);
 }
 
 /* -------- Network -------- */
