@@ -32,7 +32,7 @@ window {
     transparency:                "real";
     cursor:                      "default";
     background-color:            black / 50%;
-    border:                      0px;
+    border:                      1px;
     border-color:                @selected;
 }
 

@@ -1,0 +1,151 @@
+/*
+ * ROFI color theme
+ *
+ * Based on Base16 Material Color Scheme (https://github.com/ntpeters/base16-materialtheme-scheme)
+ *
+ * Modified by: Dave Davenport
+ * User: Tomaszal
+ * Copyright: Tomas Zaluckij
+ */
+
+* {
+        base00: #11111b;
+        base01: #181825;
+        base02: #313244;
+        base03: #45475a;
+        base04: #585b70;
+        base05: #bac2de;
+        base06: #cdd6f4;
+        base07: #cdd6f4;
+        base08: #f38ba8;
+        base09: #fab387;
+        base0A: #f9e2af;
+        base0B: #a6e3a1;
+        base0C: #94e2d5;
+        base0D: #89b4fa;
+        base0E: #cba6f7;
+        base0F: #f5c2e7;
+
+        /*base0D: #00BCD4;*/
+
+        spacing: 0;
+        background-color: transparent;
+
+}
+
+window {
+        transparency: "real";
+        background-color: #11111bF3;
+        border-radius: 20px;
+        border: 2px solid;
+        border-color: @base0D;
+        width: 750px;
+        height: 400px;
+}
+
+mainbox {
+        children: [inputbar, listview];
+        spacing: 12px;
+        padding: 12px;
+        border: 0px;
+}
+
+inputbar {
+        padding: 10px;
+        children: [prompt, textbox-prompt-colon, entry, case-indicator];
+        border-radius: 12px;
+        background-color: @base02;
+        border: 1px solid;
+        border-color: @base03;
+}
+
+prompt {
+        text-color: @base0D;
+}
+
+textbox-prompt-colon {
+        expand: false;
+        str: ":";
+        margin: 0 1ch 0 0;
+        text-color: @base0D;
+}
+
+entry {
+        text-color: @base07;
+}
+
+case-indicator {
+        text-color: @base0F;
+}
+
+mode-switcher, message {
+        border: 1px solid;
+        border-color: @base0D;
+        border-radius: 12px;
+        background-color: @base02;
+}
+
+button, textbox {
+        background-color: @base03;
+        text-color: @base07;
+        border: 1px solid;
+        border-color: transparent;
+}
+
+button selected {
+        background-color: @base0D;
+        border-color: @base0D;
+}
+
+listview {
+        scrollbar: true;
+        margin: 0 10px 0 10px;
+}
+
+scrollbar {
+        background-color: @base03;
+        handle-color: @base0D;
+        handle-width: 10px;
+        border: 0px;
+        border-radius: 8px;
+        margin: 0 0 0 20px;
+}
+
+element {
+        padding: 8px;
+        spacing: 6px;
+        highlight: bold underline;
+        children: [element-icon, element-text];
+        border-radius: 6px;
+        background-color: transparent;
+}
+element-text, element-icon {
+        background-color : inherit;
+        text-color           : inherit;
+        foreground-color : inherit;
+}
+
+element normal {
+        background-color: transparent;
+}
+
+element selected {
+        background-color: @base0D;
+        border-radius: 8px;
+}
+
+element alternate {
+        /*background-color: @base03;*/
+}
+
+element normal normal, element selected normal, element alternate normal {
+        text-color: @base07;
+}
+
+element normal urgent, element selected urgent, element alternate urgent {
+        text-color: @base0F;
+}
+
+element normal active, element selected active, element alternate active {
+        text-color: @base0B;
+}
