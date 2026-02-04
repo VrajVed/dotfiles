@@ -9,6 +9,8 @@
     // "custom/music",      // commented out
     "mpris",
     "cpu",
+    // "memory",
+    // "disk",
     "temperature"
     // "custom/cava",      // commented out
     // "custom/uptime"      // commented out
@@ -30,8 +32,17 @@
   ],
   /* ---------------- WORKSPACES ---------------- */
   "hyprland/workspaces": {
-    "format": "{icon}",
+    "disable-scroll": true,
+    "all-outputs": true,
+    "warp-on-scroll": false,
+    "format": "{name} : {icon} ",
     "format-icons": {
+      // "1": "",
+      // "2": "",
+      // "3": "",
+      // "4": "",
+      // "5": "",
+      "urgent": "",
       "active": "",
       "default": ""
     }
@@ -39,7 +50,7 @@
   /* ---------------- CLOCK ---------------- */
   "clock": {
     "timezone": "Asia/Kolkata",
-    "tooltip": false,
+    "tooltip": true,
     "format": "{:%H:%M:%S  -  %A, %d}",
     "interval": 1
   },
@@ -79,12 +90,21 @@
       "spotify": ""
     }
   },
+  // "memory": {
+  //   "format": "Mem: {used}GiB"
+  // },
+  // "disk": {
+  //   "interval": 60,
+  //   "path": "/",
+  //   "format": "Disk: {free}",
+  // },
   /* ---------------- NETWORK (ESSID) ---------------- */
   "network": {
     "format-wifi": "󰤢 {essid}",
     "format-ethernet": "󰈀 Wired",
     "format-disconnected": "󰤠 Disconnected",
     "tooltip-format": "{ifname} • {ipaddr}",
+    "on-click": "kitty -e nmtui",
     "interval": 5
   },
   /* ---------------- BLUETOOTH ---------------- */
